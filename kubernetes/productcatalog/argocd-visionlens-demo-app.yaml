@@ -17,6 +17,11 @@ spec:
         valueFiles:
           - $values/kubernetes/productcatalog/custom-values.yaml
 
+    - repoURL: https://github.com/robertteah/visionlens-devops-project-demo.git
+      targetRevision: HEAD
+      path: kubernetes/productcatalog
+      ref: values
+
   syncPolicy:
     automated:
       prune: true
