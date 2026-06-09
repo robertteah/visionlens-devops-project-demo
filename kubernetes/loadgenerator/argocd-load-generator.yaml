@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: load-generator
+spec:
+  project: otel-demo
+  source:
+    repoURL: https://github.com/robertteah/visionlens-devops-project-demo.git
+    targetRevision: main
+    path: kubernetes/loadgenerator
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: otel-demo
