@@ -4,16 +4,16 @@ metadata:
   name: productcatalog
   namespace: argocd
 spec:
-  project: default
-
-  source:
-    repoURL: https://github.com/robertteah/visionlens-devops-project-demo.git
-    targetRevision: main
-    path: kubernetes/productcatalog
+  project: otel-demo
 
   destination:
     server: https://kubernetes.default.svc
     namespace: otel-demo
+
+  sources:
+    - repoURL: https://github.com/robertteah/visionlens-devops-project-demo
+      path: kubernetes/productcatalog
+      targetRevision: main
 
   syncPolicy:
     automated:
